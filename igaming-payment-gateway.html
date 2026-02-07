@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGaming Payment Gateway India | Best Payment Solution for Online Casino & Betting</title>
+    <meta name="description" content="Leading iGaming payment gateway for India. Secure payment solutions for online casinos, sports betting, fantasy sports & real money gaming platforms. UPI, cards & e-wallets supported.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="canonical" href="https://gatewaysystem.in/igaming-payment-gateway.html" />
+    <style>
+        :root {
+            --primary-color: #4B66EA;
+            --secondary-color: #FF6B6B;
+            --accent-color: #FFA726;
+            --text-color: #333;
+            --light-bg: #F5F7FF;
+            --dark-bg: #1A2E63;
+            --india-orange: #FF9933;
+            --india-green: #138808;
+            --india-blue: #000080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--india-orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .india-accent {
+            display: inline-block;
+            height: 3px;
+            width: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(to right, var(--india-orange), white, var(--india-green));
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(255,167,38,0.4);
+        }
+
+        .btn:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,167,38,0.5);
+        }
+
+        .btn-primary {
+            background-color: #fff;
+            color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #f5f5f5;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--india-orange), var(--india-green));
+        }
+
+        /* iGaming Categories Section */
+        .igaming-categories {
+            background-color: var(--light-bg);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .category-card:nth-child(2) { border-left-color: var(--india-orange); }
+        .category-card:nth-child(3) { border-left-color: var(--india-green); }
+        .category-card:nth-child(4) { border-left-color: var(--secondary-color); }
+        .category-card:nth-child(5) { border-left-color: #9c27b0; }
+        .category-card:nth-child(6) { border-left-color: #00bcd4; }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .category-card:nth-child(2) .category-icon { color: var(--india-orange); }
+        .category-card:nth-child(3) .category-icon { color: var(--india-green); }
+        .category-card:nth-child(4) .category-icon { color: var(--secondary-color); }
+        .category-card:nth-child(5) .category-icon { color: #9c27b0; }
+        .category-card:nth-child(6) .category-icon { color: #00bcd4; }
+
+        .category-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .category-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Payment Methods Section */
+        .payment-methods {
+            background: white;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .payment-item {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-item:hover {
+            transform: scale(1.05);
+        }
+
+        .payment-item i {
+            font-size: 35px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .payment-item h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .payment-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Features Grid */
+        .features-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d1b3e 100%);
+            color: white;
+        }
+
+        .features-section .section-title {
+            color: white;
+        }
+
+        .features-section .section-title::after {
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-item i {
+            font-size: 28px;
+            color: var(--accent-color);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--light-bg);
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: white;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .reason-card {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .reason-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .reason-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .reason-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .reason-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 18px 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 22px 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .faq-item.active .faq-question:after {
+            content: '-';
+            color: white;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--india-orange) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 50px 0 25px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            margin-bottom: 35px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">India <span>Gaming</span> Gateway</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="igaming-payment-gateway.html" class="active">iGaming</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>iGaming Payment Gateway for India</h1>
+            <div class="india-accent"></div>
+            <p class="subtitle">Secure, fast, and reliable payment gateway solutions for online casinos, sports betting, fantasy sports, and all real money gaming platforms in India</p>
+            <a href="https://t.me/zfxt5" class="btn btn-primary"><i class="fab fa-telegram"></i> Get Started Today</a>
+            <a href="#categories" class="btn">Explore Solutions</a>
+        </div>
+    </section>
+
+    <section id="categories" class="igaming-categories">
+        <div class="container">
+            <h2 class="section-title">iGaming Payment Solutions We Support</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3>Online Casino Payment Gateway</h3>
+                    <p>Complete payment infrastructure for online casinos with instant deposits, fast withdrawals, and multi-currency support.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Sports Betting Payment Gateway</h3>
+                    <p>Real-time payment processing for sports betting platforms with live odds integration and instant settlement.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Fantasy Sports Payment Gateway</h3>
+                    <p>Seamless payment solutions for fantasy sports apps like Dream11, MPL with contest entry and prize distribution.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Poker & Card Games Payment</h3>
+                    <p>Secure transactions for online poker rooms and card game platforms with buy-in and cashout features.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Lottery Payment Gateway</h3>
+                    <p>Payment processing for online lottery platforms with ticket purchase and prize claim functionality.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Real Money Gaming (RMG)</h3>
+                    <p>Comprehensive payment gateway for all RMG platforms including rummy, teen patti, and skill-based games.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-methods">
+        <div class="container">
+            <h2 class="section-title">iGaming Payment Methods Supported</h2>
+            <div class="payment-grid">
+                <div class="payment-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>UPI Payments</h4>
+                    <p>Google Pay, PhonePe, Paytm & all UPI apps</p>
+                </div>
+
+                <div class="payment-item">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>Cards</h4>
+                    <p>Visa, Mastercard, RuPay debit & credit cards</p>
+                </div>
+
+                <div class="payment-item">
+                    <i class="fas fa-university"></i>
+                    <h4>Net Banking</h4>
+                    <p>All major Indian banks supported</p>
+                </div>
+
+                <div class="payment-item">
+                    <i class="fas fa-wallet"></i>
+                    <h4>E-Wallets</h4>
+                    <p>Paytm, Freecharge, MobiKwik wallets</p>
+                </div>
+
+                <div class="payment-item">
+                    <i class="fas fa-globe"></i>
+                    <h4>International Cards</h4>
+                    <p>Accept global players with forex support</p>
+                </div>
+
+                <div class="payment-item">
+                    <i class="fas fa-qrcode"></i>
+                    <h4>QR Payments</h4>
+                    <p>Bharat QR and dynamic QR support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">iGaming Payment Gateway Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h3>Instant Deposits</h3>
+                        <p>Real-time payment processing for immediate gaming credits. Players can start playing within seconds of deposit.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Fast Withdrawals</h3>
+                        <p>Quick payout processing with multiple withdrawal options. Build player trust with reliable cashouts.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Fraud Prevention</h3>
+                        <p>Advanced anti-fraud system designed for iGaming with pattern detection and risk scoring algorithms.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <div>
+                        <h3>Auto Reconciliation</h3>
+                        <p>Automated transaction matching and settlement reports. Reduce manual work and accounting errors.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-bell"></i>
+                    <div>
+                        <h3>OTP Alert System</h3>
+                        <p>Smart OTP monitoring with instant alerts for failed transactions and automatic retry mechanisms.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Comprehensive reporting with player insights, transaction trends, and revenue analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>Uptime Guarantee</p>
+                </div>
+                <div class="stat-item">
+                    <h3>&lt;2s</h3>
+                    <p>Transaction Speed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Payment Methods</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our iGaming Payment Gateway</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-number">01</div>
+                    <div>
+                        <h3>Built for iGaming Industry</h3>
+                        <p>Unlike generic payment gateways, our system is specifically designed for the unique requirements of online gaming and betting platforms.</p>
+                    </div>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">02</div>
+                    <div>
+                        <h3>High Success Rate</h3>
+                        <p>Our intelligent routing and retry logic ensures maximum transaction success rates, reducing player frustration and lost revenue.</p>
+                    </div>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">03</div>
+                    <div>
+                        <h3>Flexible System Rental</h3>
+                        <p>Rent our complete payment gateway management system without large upfront investment. Scale as your platform grows.</p>
+                    </div>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">04</div>
+                    <div>
+                        <h3>India-Focused Solution</h3>
+                        <p>Deep integration with Indian payment methods including UPI, net banking, and regional wallets for maximum coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">iGaming Payment Gateway FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">What is an iGaming payment gateway?</div>
+                    <div class="faq-answer">
+                        <p>An iGaming payment gateway is a specialized payment processing solution designed for online gaming and betting platforms. It handles deposits, withdrawals, and transactions for online casinos, sports betting sites, fantasy sports apps, poker rooms, and other real money gaming platforms. Our iGaming payment gateway is optimized for the Indian market with UPI, net banking, and local payment method support.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Which iGaming platforms does your payment gateway support?</div>
+                    <div class="faq-answer">
+                        <p>Our payment gateway supports all types of iGaming platforms including online casinos, sports betting sites, fantasy sports apps (like Dream11, MPL), online poker rooms, rummy platforms, teen patti games, lottery websites, and any other real money gaming applications operating in India.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How fast are deposits and withdrawals processed?</div>
+                    <div class="faq-answer">
+                        <p>Deposits are processed instantly for UPI and most digital payment methods. Players can start gaming within seconds of making a payment. Withdrawals are processed quickly depending on the payout method chosen, with UPI cashouts typically completing within minutes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I rent the iGaming payment gateway system?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible rental options for our complete iGaming payment gateway management system. This allows gaming platforms to access enterprise-level payment infrastructure without significant upfront costs. Contact us on Telegram for rental pricing and packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What fraud prevention measures are included?</div>
+                    <div class="faq-answer">
+                        <p>Our iGaming payment gateway includes comprehensive fraud prevention specifically designed for online gaming. This includes velocity checks, device fingerprinting, pattern analysis, risk scoring, and automated blocking of suspicious transactions. We also provide chargeback management and dispute resolution support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Power Your iGaming Platform?</h2>
+            <p>Join leading iGaming businesses in India using our payment gateway management system</p>
+            <a href="https://t.me/zfxt5" class="btn btn-primary"><i class="fab fa-telegram"></i> Contact Us on Telegram</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>iGaming Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="igaming-payment-gateway.html">Online Casino Gateway</a></li>
+                        <li><a href="igaming-payment-gateway.html">Sports Betting Gateway</a></li>
+                        <li><a href="igaming-payment-gateway.html">Fantasy Sports Gateway</a></li>
+                        <li><a href="igaming-payment-gateway.html">RMG Payment Gateway</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Gaming Gateway</a></li>
+                        <li><a href="igaming-payment-gateway.html">iGaming Gateway</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/zfxt5"><i class="fab fa-telegram"></i> Telegram Support</a></li>
+                        <li><a href="mailto:contact@gatewaysystem.in"><i class="fas fa-envelope"></i> Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 India Gaming Gateway | iGaming Payment Gateway India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

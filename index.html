@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Payment Gateway | Payment Gateway Management System for India</title>
+    <meta name="description" content="Complete Payment Gateway Management System for gaming businesses in India. Secure payment gateway with UPI integration, real-time monitoring, and 24/7 support.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="canonical" href="https://gatewaysystem.in/" />
+    <style>
+        :root {
+            --primary-color: #4B66EA; /* Vibrant blue shade */
+            --secondary-color: #FF6B6B; /* Warm accent color */
+            --accent-color: #FFA726; /* Orange accent */
+            --text-color: #333;
+            --light-bg: #F5F7FF;
+            --dark-bg: #1A2E63;
+            --india-orange: #FF9933;
+            --india-green: #138808;
+            --india-blue: #000080;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--india-orange);
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--india-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .btn:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #f5f5f5;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--india-orange), var(--india-green));
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:nth-child(2) {
+            border-top-color: var(--india-orange);
+        }
+        
+        .feature-card:nth-child(3) {
+            border-top-color: var(--india-green);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card:nth-child(2) .feature-icon {
+            color: var(--india-orange);
+        }
+        
+        .feature-card:nth-child(3) .feature-icon {
+            color: var(--india-green);
+        }
+        
+        .benefits {
+            background-color: var(--light-bg);
+            position: relative;
+        }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            color: var(--secondary-color);
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-item.active .faq-question:after {
+            content: '-';
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--india-orange) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/400/200');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: #f0f0f0;
+            font-family: Georgia, serif;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-info {
+            margin-left: 15px;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .author-title {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-card {
+                max-width: 100%;
+            }
+            
+            .benefit-grid {
+                gap: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* India-themed color accent elements */
+        .india-accent {
+            display: inline-block;
+            height: 3px;
+            width: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(to right, var(--india-orange), white, var(--india-green));
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">India <span>Gaming</span> Gateway</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="igaming-payment-gateway.html">iGaming</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Gaming Payment Gateway Management System</h1>
+            <div class="india-accent"></div>
+            <p class="subtitle">Complete payment gateway management system designed specifically for gaming and entertainment businesses in India</p>
+            <a href="https://t.me/zfxt5" class="btn btn-primary"><i class="fab fa-telegram"></i> Chat With Our Team</a>
+        </div>
+    </section>
+    
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Gaming Payment Gateway Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gaming-Optimized Gateway</h3>
+                    <p>Our payment gateway is specially designed for gaming platforms with high-volume transaction handling and microtransaction support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Multi-Currency Support</h3>
+                    <p>Process payments in INR and multiple international currencies with competitive forex rates for global gaming audiences.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Complete Management System</h3>
+                    <p>Our Payment Gateway Management System offers full control with automated callbacks, reporting tools, and reconciliation features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Our Payment Gateway Management System</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div>
+                        <h3>System Rental Options</h3>
+                        <p>Flexible rental plans for our Payment Gateway Management System with no large upfront investment required.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3>Advanced Analytics Dashboard</h3>
+                        <p>Comprehensive reporting tools to track gaming transactions, player spending patterns, and revenue streams.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Fraud Prevention System</h3>
+                        <p>Gaming-specific fraud detection algorithms to protect both players and your business from unauthorized transactions.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3>API Integration Suite</h3>
+                        <p>Easy-to-implement APIs that connect your gaming platform with our payment gateway management system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features-details">
+        <div class="container">
+            <h2 class="section-title">Gaming Payment Gateway Technology</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div>
+                        <h3>OTP Alert System</h3>
+                        <p>Intelligent OTP monitoring with disconnection alerts to prevent lost gaming transactions and maintain player satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3>Automated Monitoring Bots</h3>
+                        <p>Smart bots for transaction verification, reconciliation, and account management to streamline operations.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div>
+                        <h3>Optimized Checkout Interface</h3>
+                        <p>Gaming-friendly payment pages designed to maximize conversion rates and reduce cart abandonment.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h3>Payment Gateway Infrastructure</h3>
+                        <p>Robust system architecture capable of handling high-volume gaming transactions with minimal latency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Trusted by Gaming Businesses in India</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"This payment gateway management system transformed our gaming platform's payment experience. Transaction success rates increased by 32% and player satisfaction scores improved dramatically."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Vikram Singh</div>
+                                <div class="author-title">Online Casino Operator, Mumbai</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The OTP alert system and monitoring bots have virtually eliminated payment failures. The gaming-specific features make a huge difference, and the support team understands our unique requirements."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Ananya Mehta</div>
+                                <div class="author-title">Mobile Gaming Company, Bangalore</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">How does your Payment Gateway Management System work?</div>
+                    <div class="faq-answer">
+                        <p>Our system provides a complete solution for gaming businesses to process payments, manage transactions, and optimize conversion rates. It includes payment processing, monitoring tools, fraud prevention, and reporting capabilities all in one platform.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I rent the entire Payment Gateway system?</div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer flexible rental options for our entire Payment Gateway Management System. This allows gaming businesses to access enterprise-level payment infrastructure without significant upfront investment. Contact us for rental pricing options.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What gaming payment methods do you support?</div>
+                    <div class="faq-answer">
+                        <p>Our gateway supports all popular Indian payment methods including UPI (Google Pay, PhonePe, Paytm), credit/debit cards, net banking, and e-wallets. We also support international payment options for global players accessing Indian gaming platforms.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do your OTP alerts and monitoring bots work?</div>
+                    <div class="faq-answer">
+                        <p>Our intelligent system monitors OTP delivery and authentication in real-time. If issues are detected, our bots automatically implement alternative verification methods to complete transactions. The system also includes proactive monitoring for disbursement security to prevent account freezes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container cta-content">
+            <h2 class="section-title">Rent Your Gaming Payment Gateway Today</h2>
+            <p class="subtitle">Join gaming businesses across India already using our Payment Gateway Management System</p>
+            <a href="https://t.me/zfxt5" class="btn"><i class="fab fa-telegram"></i> Message Us on Telegram</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gatewaysystem.in/">For E-commerce</a></li>
+                        <li><a href="https://gatewaysystem.in/">For Retail</a></li>
+                        <li><a href="https://gatewaysystem.in/">For Subscription Businesses</a></li>
+                        <li><a href="https://gatewaysystem.in/">For Service Providers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gatewaysystem.in/">Integration Guide</a></li>
+                        <li><a href="https://gatewaysystem.in/">API Documentation</a></li>
+                        <li><a href="https://gatewaysystem.in/">Success Stories</a></li>
+                        <li><a href="https://gatewaysystem.in/">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/zfxt5"><i class="fab fa-telegram"></i> Telegram Support</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 India Gaming Gateway Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
